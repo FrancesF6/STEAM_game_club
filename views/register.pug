@@ -1,0 +1,37 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title Register | Steam Game Club
+        link(rel="stylesheet" type="text/css" href=`/css/register.css`)
+        link(rel="icon" href=`/images/icon-user.png`)
+
+    body
+        include ./partials/header
+
+        #bodyarea
+            form#register-form
+                label.register-form-labels(for="usr") Username:
+                input(type="text" id="usr" required maxlength="20")
+                br
+                label.register-form-labels(for="pname") 
+                    abbr#pname-hint(title="the public display name that others can see") Profile Name:
+                input(type="text" id="pname" required)
+                br
+                label.register-form-labels(for="psw") Password:
+                input(type="password" id="psw" required maxlength="20")
+                br
+                input(type="button" id="register-button" value="Register" onclick="register()" disabled)
+            
+            #msg-usr
+                .validate-msg Username must:
+                #usr-length(class="invalid") Contain 4 - 20 characters
+                #usr-nospace(class="invalid") Contain no spaces
+            #msg-psw
+                .validate-msg Password must:
+                #psw-length(class="invalid") Contain 8 - 20 characters
+                #psw-lower(class="invalid") Contain 1 lowercase letter
+                #psw-upper(class="invalid") Contain 1 uppercase letter
+                #psw-digit(class="invalid") Contain 1 digit
+                #psw-nospace(class="invalid") Contain no spaces
+
+        script(src=`/js/register.js`)

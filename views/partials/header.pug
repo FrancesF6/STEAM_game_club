@@ -1,0 +1,34 @@
+link(rel="stylesheet" href=`/css/partials/header.css`)
+#header
+    a.header-page(href=`/`) Home
+    |
+    a.header-page(href=`/games`) Games
+    |
+    if session.loggedin
+        a.header-page(href=`/users/${session.uid}`) My Profile
+        |
+        a.header-page(href=`/logout`) Log Out
+        |
+
+    else 
+        a.header-page(href=`/register`) Register
+        |
+        a.header-page(onclick="openLoginForm()") Log In
+        |
+
+- let today = new Date();
+- let date = today.getFullYear() + '-'+ (today.getMonth() + 1) + '-' + today.getDate();
+#header-date Today is #{date}
+
+#header-popup-login-box
+    form#header-login-form
+        label.header-login-labels(for="header-login-username") Username:
+        input(type="text" id="header-login-username" name="username")
+        br
+        label.header-login-labels(for="header-login-password") Password:
+        input(type="password" id="header-login-password" name="password")
+        br
+        input(type="button" id="header-login" value="Log In" onclick="requestLogin()")
+        input(type="button" id="header-cancel" value="Close" onclick="closeLoginForm()")
+
+script(src=`/js/header.js`)

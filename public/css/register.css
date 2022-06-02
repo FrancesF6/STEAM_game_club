@@ -1,0 +1,89 @@
+#bodyarea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#register-form {
+    margin: 10px;
+    padding: 25px;
+    background-color: rgba(255,255,255,0.1);
+    border: dashed ivory;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.register-form-labels {
+    font-family: 'Georgia', serif;
+    font-size: large;
+    margin: 10px;
+    color: rgb(210,215,245);
+}
+
+#usr, #pname, #psw {
+    border-radius: 5px;
+    margin: 10px;
+    width: 150px;
+    border: 1px solid rgb(210,215,245);
+    text-align: center; 
+}
+
+#register-button {
+    margin-top: 20px;
+    background-color: rgba(65,105,225,0.85);
+    border-radius: 10px;
+    border: none;
+    color: ivory;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: medium;
+    cursor: pointer;
+}
+
+#register-button:hover {
+    background-color: rgba(65,105,225,0.95);
+    box-shadow: 0 0 5px rgba(123,104,238,0.8);
+}
+
+#register-button:active {
+    transform: translate(0.5px, 1px);
+}
+
+#register-button:disabled {
+    background-color: rgba(65,80,180,0.3);
+    box-shadow: none;
+    cursor: default;
+}
+
+#msg-usr, #msg-psw {
+    font-family: 'Times New Roman', serif;
+    color: rgb(220,220,245);
+    display: none;
+}
+
+.validate-msg {
+    font-weight: bold;
+    padding: 5px;
+}
+
+.valid {
+    color: rgb(35,150,240);
+    margin: 5px;
+}
+
+.valid:before {
+    position: relative;
+    left: -20px;
+    content: "✔";
+}
+
+.invalid {
+    color: orangered;
+    margin: 5px;
+}
+
+.invalid:before {
+    position: relative;
+    left: -20px;
+    content: "✖";
+}

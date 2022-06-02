@@ -1,0 +1,104 @@
+body {
+    /* Thanks to https://www.hdimages.pics/tags/bokeh-effect.php */
+    background-image: url("/images/main-bg.jpg");
+}
+
+#header {
+    display: flex;
+    flex-flow: row wrap;
+    width: 75%;
+    margin: 10px 0px 15px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.header-page {
+    margin: 15px;
+    font-size: larger;
+    color: rgb(210,215,245);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header-page:hover {
+    color: rgb(180,200,240);
+    text-shadow: 0 0 3px aliceblue;
+}
+
+#header-date {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    margin: 15px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: large;
+    color: rgb(210,215,245);
+}
+
+#header-popup-login-box {
+    display: none;   /* initially invisible */
+    position: absolute;
+    left: 8em;
+    width: 20em;
+    text-align: center;
+}
+
+#header-login-form {
+    margin: 0px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    background-color: rgba(42,57,75,85%);
+    border: dashed ivory;
+    border-radius: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+.header-login-labels {
+    font-family: 'Georgia', serif;
+    font-size: large;
+    margin: 10px;
+    color: rgb(210,215,245);
+}
+
+#header-login-username, #header-login-password {
+    border-radius: 5px;
+    margin: 10px;
+    width: 100px;
+    border: 1px solid rgb(210,215,245);
+    text-align: center; 
+}
+
+#header-login, #header-cancel {
+    margin-top: 15px;
+    border-radius: 7px;
+    border: none;
+    color: ivory;
+    padding: 3.5px 8px;
+    text-align: center;
+    font-size: medium;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#header-login {
+    background-color: rgba(65,105,225,0.85);
+}
+
+#header-login:hover {
+    background-color: rgba(65,105,225,0.95);
+    box-shadow: 0 0 5px rgba(123,104,238,0.8);
+}
+
+#header-login:active {
+    background-color: rgba(65,105,225,0.95);
+    transform: translate(0.5px, 1px);
+}
+
+#header-cancel {
+    background-color: rgba(65,105,225,0.65);
+}
+
+#header-cancel:hover {
+    background-color: rgba(65,105,225,0.5);
+}

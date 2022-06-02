@@ -1,0 +1,57 @@
+//- Require data:
+    game - {id: integer, title: string, date: string, genres: [], devCompanies/pubCompanies: {cid: name, ...}}
+    liked - true / false
+    reviewed - {reviewID: int, timestamp: int} / undefined
+
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title #{game.title} | Steam Game Club
+        link(rel="stylesheet" type="text/css" href=`/css/game.css`)
+        link(rel="icon" href=`/images/icon-game.png`)
+        script.
+            const gameID = #{game.id};
+        script(src=`/js/game.js`)
+
+    body(onload="init()")
+        include ./partials/header
+
+        .container
+            #game-info
+                a#game-steam-link(href=`https://store.steampowered.com/app/${game.id}` target='_blank')
+                    #game-title #{game.title.toUpperCase()}
+                    
+                if session.loggedin
+                    if liked
+                        img#liked(src="/images/like.png" onclick="changeLike(this)")
+                    else
+                        img#nolike(src="/images/nolike.png" onclick="changeLike(this)")
+                #game-info-labels Release date: #{new Date(game.date*1000).toISOString().slice(0,10)}
+                #game-info-labels Genres: 
+                    each genre in game.genres
+                        a#game-genre(href=`/games?genre=${genre.toLowerCase()}`) #{genre}
+                #game-info-labels Developer: 
+                    each name, cid in game.devCompanies
+                        a#game-company(href=`/games?company=${cid.toLowerCase()}`) #{name}
+                #game-info-labels Publisher: 
+                    each name, cid in game.pubCompanies
+                        a#game-company(href=`/games?company=${cid.toLowerCase()}`) #{name}
+
+            //- rendered when loading page
+            #liked-users
+
+            #reviews-list
+
+            if (session.loggedin)
+                if reviewed
+                    #my-review
+                        #my-review-title You reviewed this game:
+                        .review-time #{new Date(reviewed.timestamp*1000).toUTCString()}
+                        .review-content(id=`content-${reviewed.reviewID}`)
+                        script.
+                            renderReview(#{reviewed.reviewID});
+                else
+                    form#write-review-form
+                        label(for="form-review") Review:
+                        textarea(id="form-review" name="content" maxlength="500")
+                        input(type="button" id="button" value="Send" onclick="sendReview()")

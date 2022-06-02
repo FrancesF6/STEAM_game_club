@@ -1,0 +1,211 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#game-info {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    min-width: 50%;
+    max-width: min(80%, 1000px);
+    padding: 20px 30px;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: dashed rgba(210,215,245,0.9);
+    color: whitesmoke;
+    background-color: rgba(210,215,245,0.2);
+}
+
+#game-steam-link {
+    color: rgb(210,215,245);
+    text-decoration: none;
+}
+
+#game-title {
+    text-align: center;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 30px;
+}
+
+#liked, #nolike {
+    align-self: center;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    margin-top: 5px;
+}
+
+#game-info-labels {
+    font-family: 'Georgia', serif;
+    font-size: large;
+    margin: 5px;
+}
+
+#game-genre, #game-company {
+    margin: 5px;
+    color: rgb(210,215,245);
+}
+
+#liked-users {
+    display: inline-table;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: min(80%, 1000px);
+    width: -webkit-fill-available;
+    margin: 20px 0px;
+    padding: 20px;
+    border-radius: 20px;
+    border: dashed rgba(210,215,245,0.9);
+    background-color: rgba(210,215,245,0.15);
+}
+
+#liked-users-list {
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+#liked-user {
+    margin: 10px 35px;
+}
+
+.liked-user-link {
+    display: inline-table;
+    flex-wrap: wrap;
+    width: 125px;
+    height: 125px;
+    color: floralwhite;
+    text-decoration: none;
+}
+
+.liked-user-link:active {
+    transform: translate(0.5px, 1px);
+}
+
+img.avatar {
+    width: 80px;
+}
+
+.liked-user-title {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    margin: 5px;
+}
+
+.liked-user-title:hover {
+    border-radius: 10px;
+    background-color: rgba(215,225,245,0.1);
+}
+
+#reviews-list, #my-review {
+    display: inline-table;
+    max-width: min(80%, 1000px);
+    width: -webkit-fill-available;
+    padding: 5px;
+    margin: 10px 0px;
+    padding: 20px;
+    border-radius: 20px;
+    border: dashed rgba(210,215,245,0.9);
+    background-color: rgba(210,215,245,0.15);
+}
+
+#reviews-msg, #likes-msg, #my-review-title {
+    color: aliceblue;
+    font-size: 20px;
+}
+
+#my-review-title {
+    margin-bottom: 15px;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px 10px 10px;
+    margin: 10px 0px 20px;
+    line-height: 30px;
+    border: 2px solid rgba(210,215,245,0.9);
+    font-family: 'Georgia', serif;
+    font-size: large;
+}
+
+.review-user {
+    padding: 0px 10px;
+    display: inline;
+    color: floralwhite;
+}
+
+.review-time {
+    position: relative;
+    text-align: end;
+    top: -30px;
+    height: 0px;
+    font-size: medium;
+    color: rgba(210,215,245,0.9);
+}
+
+.review-content {
+    padding: 0px 10px;
+    background: rgba(210,225,245,0.25);
+    font-style: italic;
+    font-size: 17.5px;
+    color: aliceblue;
+    font-family: 'Georgia', serif;
+    line-height: 30px;
+}
+
+
+#write-review-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: min(60%, 800px);
+    margin-top: 25px;
+    padding: 15px 10px;
+    background-color: rgba(215,225,245,0.15);
+    border: dashed rgba(210,215,245,0.9);
+    border-radius: 20px;
+}
+
+#write-review-form label {
+    align-self: start;
+    padding: 0px 10px 0px 20px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: large;
+    color: whitesmoke;
+}
+
+#write-review-form textarea {
+    resize: none;
+    vertical-align: middle;
+    width: -webkit-fill-available;
+    height: 80px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid darkblue;
+    font-family: 'Inter';
+}
+
+#write-review-form #button {
+    width: fit-content;
+    align-self: center;
+    padding: 5px 10px;
+    background-color: rgba(100, 149, 237, 0.75);
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: medium;
+    cursor: pointer;
+}
+
+#write-review-form #button:hover {
+    background-color: rgba(100, 149, 237, 0.95);
+    box-shadow: 0 0 5px cornflowerblue;
+}
+
+#write-review-form #button:active {
+    transform: translate(0.5px, 1px);
+}

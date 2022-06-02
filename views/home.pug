@@ -1,0 +1,14 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title Home | Steam Game Club
+        link(rel="stylesheet" href=`/css/home.css`)
+        link(rel="icon" href=`/images/icon-home.png`)
+
+    body
+        include ./partials/header
+
+        if session.loggedin
+            h1#greeting Welcome to Steam Game Club, #{session.profileName}!
+        else 
+            h1#greeting Welcome to Steam Game Club!

@@ -1,0 +1,102 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#game-search-form {
+    padding: 25px;
+    width: max-content;
+    background-color: rgba(215,225,245,0.15);
+    border: dashed rgba(210,215,245,0.9);
+    border-radius: 20px;
+}
+
+#game-search-form label {
+    font-family: 'Georgia', serif;
+    font-size: large;
+    margin: 10px;
+    color: rgba(210,215,245,0.9);
+}
+
+#search-title, #search-genre, #search-company, #search-date-from, #search-date-to {
+    border-radius: 5px;
+    margin: 10px;
+    width: 100px;
+    border: 1px solid rgb(210,215,245);
+}
+
+#search-title {
+    width: 200px;
+}
+
+#search-company {
+    width: 150px;
+}
+
+#search-submit {
+    margin-top: 10px;
+    background-color: rgba(65,105,225,0.85);
+    border-radius: 10px;
+    border: none;
+    color: ivory;
+    padding: 4px 12px;
+    font-size: medium;
+    cursor: pointer;
+}
+
+#search-submit:hover {
+    background-color: rgba(65,105,225,0.95);
+    box-shadow: 0 0 5px rgba(123,104,238,0.8);
+}
+
+#search-submit:active {
+    transform: translate(0.5px, 1px);
+}
+
+#list {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game-link {
+    display: inline-table;
+    margin: 5px;
+    width: 500px;
+    border-radius: 10px;
+    border-style: dotted solid solid dotted;
+    color: rgba(210,215,245,0.9);
+    background-color: rgba(255,245,238,0.1);
+    text-decoration: none;
+}
+
+.game-link:hover {
+    text-shadow: 0 0 1px rgba(123,104,238,0.8);
+    background-color: rgba(255,245,238,0.2);
+}
+
+.game-link:active {
+    transform: translate(0.5px, 1px);
+}
+
+
+.game-title {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 17.5px;
+    margin: 10px;
+}
+
+.turn-page {
+    color: ivory;
+    text-decoration: none;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 5px 10px;
+    padding: 2.5px 5px;
+}
+
+.turn-page:hover {
+    background-color: rgba(210,215,245,0.25);
+}

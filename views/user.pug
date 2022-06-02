@@ -1,0 +1,51 @@
+//- Require data:
+    user - {uid: integer, username: text, profile_name: text, privacy: integer}
+    owner - true/false - if the profile page belongs to the user logged in
+    following - true/false - if the user logged in is following the requested user
+
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title #{user.profile_name} | Steam Game Club
+        link(rel="stylesheet" type="text/css" href=`/css/user.css`)
+        link(rel="icon" href=`/images/icon-user.png`)
+
+    body
+        include ./partials/header
+
+        #user-header
+            img#user-avatar(src=`/avatars/uid_${user.uid}`)
+            #user-profile-name #{user.profile_name}
+            br
+            if session.loggedin && !owner
+                if following
+                    button#following(onclick="unfollow()") following
+                else
+                    button#nofollowing(onclick="follow()") follow
+
+        //- if user's profile is private and not logged in, send message
+        if user.privacy && !owner
+            p#private-message #{user.profile_name}'s profile is private
+
+        else
+            #container 
+                #lSide
+                    if owner 
+                        button.user-navbar(onclick="renderSettings()") settings
+                        |
+                    button.user-navbar(onclick=`getJSONList('followings', ${owner})`) followings
+                    |
+                    button.user-navbar(onclick=`getJSONList('followers', ${owner})`) followers
+                    |
+                    button.user-navbar(onclick=`getJSONList('likes', ${owner})`) likes
+                    |
+                    button.user-navbar(onclick=`getJSONList('reviews', ${owner})`) reviews
+                    |
+
+                #rSide
+
+        script.
+            const userID = #{user.uid};
+            let privacy = #{user.privacy};
+
+        script(src=`/js/user.js`)

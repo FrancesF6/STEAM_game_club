@@ -1,0 +1,43 @@
+//- Require data:
+    games - {id (string): title (string), ... },
+    page - int,
+    nextPage - boolean
+    currentURL - string, current query url
+
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title Games | Steam Game Club
+        link(rel="stylesheet" type="text/css" href=`/css/games.css`)
+        link(rel="icon" href=`/images/icon-games.png`)
+
+    body
+        include ./partials/header
+
+        #container
+            form#game-search-form(action="/games" method="GET")
+                label(for="search-title") Game Title:
+                input(type="text" id="search-title" name="title")
+                br
+                label(for="search-genre") Genre:
+                input(type="text" id="search-genre" name="genre")
+                label(for="search-company") Company:
+                input(type="text" id="search-company" name="company")
+                br
+                label Release date:
+                label(for="search-date-from") from
+                input(type="date" id="search-date-from" name="releaseafter" min="1970-01-01" max="2030-01-01")
+                label(for="search-date-to") to
+                input(type="date" id="search-date-to" name="releasebefore" min="1970-01-01" max="2030-01-01")
+                br
+                input(type="submit" id="search-submit" value="Search")
+
+            #list
+                each title, id in games
+                    a.game-link(href=`/games/${id}`)
+                        p.game-title #{title}
+                
+                if page > 1
+                    a.turn-page(href=`/games${currentURL}&page=${page-1}`) &laquo; Previous
+                if nextPage
+                    a.turn-page(href=`/games${currentURL}&page=${page+1}`) Next &raquo;

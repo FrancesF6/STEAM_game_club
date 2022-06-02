@@ -1,0 +1,236 @@
+#user-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img#user-avatar {
+    width: 100px;
+}
+
+#user-profile-name {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 35px;
+    color: rgb(210,215,245);
+}
+
+#following, #nofollowing {
+    margin: 15px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    background-color: rgba(215,225,245,0.5);
+    color: floralwhite;
+    cursor: pointer;
+}
+
+/* user's profile is private */
+#private-message {
+    text-align: center;
+    font-size: 35px;
+    color: ivory;
+}
+
+/* user's profile is public */
+#container {
+    display: flex;
+    margin-top: 35px;
+}
+
+#lSide {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    min-width: 200px;
+    left: 5%;
+    padding: 10px 0px;
+    border-radius: 20px;
+    border: dashed rgba(210,215,245,0.9);
+    background-color: rgba(210,215,245,0.05);
+
+}
+
+#rSide {
+    position: relative;
+    width: 50%;
+    min-width: 300px;
+    left: 32%;
+    padding-bottom: 25px;
+    border-radius: 20px;
+    border: dashed rgba(210,215,245,0.9);
+    background-color: rgba(210,215,245,0.1);
+    font-family: 'Georgia', serif;
+    text-align: center;
+}
+
+.column-display {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+button.user-navbar {
+    margin: 15px;
+    padding: 10px 0px;
+    /* display: inline-block; */
+    border-radius: 15px;
+    border: none;
+    text-decoration: none;
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    background-color: rgba(215,225,255,0.25);
+    color: aliceblue;
+    cursor: pointer;
+}
+
+button.user-navbar:hover {
+    background-color: rgba(215,225,255,0.5);
+}
+
+button.user-navbar:active {
+    transform: translate(0.5px, 1px);
+}
+
+/* settings page */
+
+#privacy-mode {
+    padding: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+#change-pname, #change-psw {
+    font-size: large;
+    border-top: dotted rgba(210,215,245,0.9);
+    padding: 20px 0px 10px 0px;
+    color: white;
+    font-size: 20px;
+}
+
+#privacy-form, #pname-form, #psw-form {
+    padding: 10px;
+    margin: 0px;
+}
+
+.privacy-radios {
+    margin: 6px;
+    width: 20px;
+}
+
+.privacy-labels {
+    font-size: large;
+    margin: 10px;
+    color: antiquewhite;
+}
+
+#privacy-button, #pname-button, #psw-button {
+    background-color: rgba(100, 149, 237, 0.75);
+    border-radius: 10px;
+    border: none;
+    color: ivory;
+    padding: 5px 10px;
+    margin: 15px 0px 0px;
+    cursor: pointer;
+}
+
+#privacy-button:hover, #pname-button:hover, #psw-button:hover {
+    background-color: rgba(100, 149, 237, 0.95);
+    box-shadow: 0 0 5px cornflowerblue;
+}
+
+#privacy-button:active, #pname-button:active, #psw-button:active {
+    transform: translate(0.5px, 1px);
+}
+
+#pname-input, #psw-input {
+    border-radius: 5px;
+    margin: 10px;
+    border: 1px solid rgb(210,215,245);
+    text-align: center;
+}
+
+
+/* followings, likes, reviews lists */
+
+.delete-span {
+    margin-right: 10px;
+    color: #f1f1f1;
+    font-family: monospace;
+    font-size: 35px;
+}
+
+.delete-span:hover {
+    color: #bbb;
+    cursor: pointer;
+}
+
+.follower, .following {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.like {
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.follow-link, .like-link, .review-link {
+    text-decoration: none;
+    padding: 10px;
+    font-size: 25px;
+    color: antiquewhite;
+}
+
+.follow-avatar {
+    width: 80px;
+}
+
+.userPName {
+    margin: 10px;
+    padding: 0px 5px;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+.follow-avatar:hover, .userPName:hover {
+    
+    background-color: rgba(215,225,245,0.1);
+}
+
+.review {
+    margin: 20px;
+}
+
+.review-time {
+    flex-direction: row-reverse;
+    display: flex;
+    padding: 10px 0px 0px;
+    color: rgba(210,215,245,0.9);
+}
+
+.review-content {
+    margin: 15px 0px;
+    border-radius: 10px;
+    background: rgba(215,225,245,0.25);
+    font-style: italic;
+    font-size: 17.5px;
+    color: white;
+    text-align: left;
+    padding: 20px;
+}
